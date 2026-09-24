@@ -1,0 +1,4 @@
+ID,Title,Linked TC,Expected,Actual,Severity
+BUG-001,Invalid Patient Name,TC-006,Form rejects symbols and non-trailing spaces in name.,Patient is registered with dubious name.,Medium
+BUG-002,Non-informational Error Messages,TC-007,Form informs about which fields are creating an issue.,"Shows vague error message ""Error saving vitals and biometrics"".",Low
+BUG-003,Invalid Patient Telephone Number,TC-008,Form rejects letters in telephone number.,Patient is registered/updated with invalid phone number.,Low

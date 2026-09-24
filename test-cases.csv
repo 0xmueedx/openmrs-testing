@@ -1,0 +1,27 @@
+Test Case ID,Description,Steps,Expected Result,Actual Result,Status
+TC-001,Verify login with valid credentials,"1. Navigate to o3.openmrs.org
+2. Enter username admin
+3. Enter password Admin123
+4. Click ""Log In""",User is logged in and taken to the Home dashboard.,Same as expected.,PASS
+TC-002,Search for patient by partial name,"1. Search ""Jo""","Results for first names/last names containing ""Jo"" appear.",Same as expected.,PASS
+TC-003,Register patient with empty name,"1. Open Register
+2. Leave name blank
+3. Click Save",Form shows validation error.,Same as expected.,PASS
+TC-004,Register patient with future DOB,"1. Open Register
+2. Set DOB to 01/01/2030
+3. Save",Form rejects future date.,Same as expected.,PASS
+TC-005,Register patient with very old DOB,"1. Open Register
+2. Set DOB to 01/01/1800
+3. Save",Form rejects very old date.,Same as expected.,PASS
+TC-006,Register patient with symbols in name,"1. Open Register
+2. Type ""Ahm#d"" in First Name
+3. Type ""Raz@"" in Last Name
+4. Save",Form rejects symbols and non-trailing spaces in name.,Patient is registered with dubious name.,FAIL
+TC-007,Record dubious patient vitals,"1. Navigate to ""Record Vitals"" on an existing patient
+2. Insert negative or zero values for weight and height.
+3. Save
+",Form informs about which fields are creating an issue.,"Shows vague error message ""Error saving vitals and biometrics"".",FAIL
+TC-008,Register patient with invalid phone number,"1. Open Register or existing patient
+2. Insert letters in the Telephone Number field
+3. Save
+",Form rejects letters in telephone number.,Patient is registered/updated with invalid phone number.,FAIL
